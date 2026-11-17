@@ -7,10 +7,18 @@ description = "Rust port of the TIC-80 fantasy computer — core, in progress"
 publish = false
 readme = "README.md"
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 [[bin]]
 name = "rustic80"
 path = "src/main.rs"
+required-features = ["lua"]
+
+[features]
+default = ["lua"]
+lua = ["dep:mlua"]
 
 [dependencies]
-mlua = { version = "0.10", features = ["lua54", "vendored"] }
+mlua = { version = "0.10", optional = true, features = ["lua54", "vendored"] }
 png = "0.17"

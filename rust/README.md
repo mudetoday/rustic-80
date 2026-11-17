@@ -19,4 +19,9 @@ cd rust
 cargo test
 cargo run -- --frames 60 --png frame.png
 cargo run -- run carts/demo.lua --frames 60 --png frame.png
+
+The same machine builds for the browser without embedded Lua (`wasm32-unknown-unknown`, `--no-default-features`). The page drives it.
+```bash
+cargo build --lib --release --target wasm32-unknown-unknown --no-default-features
+```
 ```

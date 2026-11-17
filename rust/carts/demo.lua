@@ -17,6 +17,8 @@ function BOOT()
   trace("BOOT rustic-80")
 end
 
+local px, py = 200, 78
+
 function TIC()
   local t = time() / 1000
   cls(0)
@@ -34,4 +36,11 @@ function TIC()
   print("TIC-80 IN RUST", 70, 50, 10, true, 1)
   local bounce = math.floor(math.abs((t * 40) % 60 - 30))
   line(10, 100, 230, 100 - bounce, 14)
+
+  if btn(2) then px = math.max(12, px - 1) end
+  if btn(3) then px = math.min(216, px + 1) end
+  if btn(0) then py = math.max(20, py - 1) end
+  if btn(1) then py = math.min(96, py + 1) end
+  rect(px, py, 8, 8, 4)
+  if btn(4) then circb(px + 4, py + 4, 12, 12) end
 end

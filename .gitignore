@@ -199,3 +199,8 @@ build/*.map
 # local tooling, not part of the project
 .claude/
 openspec/
+
+# Rust port
+/rust/target/
+/rust/frame.png
+**/frame.png

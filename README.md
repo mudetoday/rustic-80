@@ -1,3 +1,5 @@
+> **Rustic-80** is a Rust port of TIC-80. The port starts in [`rust/`](rust/) — see [RUST.md](RUST.md). The C studio below is still the upstream code while the core moves over.
+
 [![Build Status](https://github.com/nesbox/TIC-80/workflows/Build/badge.svg)](https://github.com/nesbox/TIC-80/actions?query=workflow%3ABuild)
 
 ![TIC-80](https://tic80.com/img/logo64.png)

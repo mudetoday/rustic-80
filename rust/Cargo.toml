@@ -1,0 +1,16 @@
+[package]
+name = "rustic80"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Rust port of the TIC-80 fantasy computer — core, in progress"
+publish = false
+readme = "README.md"
+
+[[bin]]
+name = "rustic80"
+path = "src/main.rs"
+
+[dependencies]
+mlua = { version = "0.10", features = ["lua54", "vendored"] }
+png = "0.17"

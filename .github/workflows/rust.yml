@@ -1,0 +1,24 @@
+name: Rust
+
+on:
+  push:
+    paths:
+      - "rust/**"
+      - ".github/workflows/rust.yml"
+  pull_request:
+    paths:
+      - "rust/**"
+      - ".github/workflows/rust.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: test and build
+        working-directory: rust
+        run: |
+          cargo test
+          cargo build --release
+          cargo run --release -- --frames 2 --png /tmp/frame.png
